@@ -15,7 +15,7 @@ public class TodoFunctionalityTest {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:/dev/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "D:/dev/ChromeWebDriver/chromedriver.exe");
         webDriver = new ChromeDriver();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webDriver.get("https://angularjs.org/");

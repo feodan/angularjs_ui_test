@@ -1,6 +1,8 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.text.MessageFormat;
 import java.util.List;
@@ -14,8 +16,12 @@ public class HomePage {
     private String todoLabelText = "//*[text()=''{0}'']";
 //    private By todoInputLocator = cssSelector("[ng-model='todoList.todoText']");
 //    private By addTodoButtonLocator = cssSelector("[type='submit']");
-    WebElement todoInput = driver.findElement(cssSelector("[ng-model='todoList.todoText']"));
-    WebElement addTodoButton = driver.findElement(cssSelector("[type='submit']"));
+//    private WebElement todoInput = driver.findElement(cssSelector("[ng-model='todoList.todoText']"));
+    @FindBy(how = How.CSS, using = "[ng-model='todoList.todoText']")
+    private WebElement todoInput;
+    @FindBy(how = How.CSS, using = "[type='submit']")
+    private WebElement addTodoButton;
+//    private WebElement addTodoButton = driver.findElement(cssSelector("[type='submit']"));
     private By todoItemsLocator = cssSelector("ul.unstyled li span");
     private By archiveLocator = cssSelector("[ng-click='todoList.archive()']");
 
