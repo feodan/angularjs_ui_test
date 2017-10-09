@@ -3,10 +3,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import java.text.MessageFormat;
 import java.util.concurrent.TimeUnit;
 
+import static javafx.scene.paint.Color.rgb;
+import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -26,7 +29,8 @@ public class TodoFunctionalityTest {
      */
     @Test
     public void testAddRemoveTodo() {
-        HomePage homePage = new HomePage(webDriver);
+//        HomePage homePage = new HomePage(webDriver);
+        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
         String todoName = "AAA";
 
         homePage.addTodo(todoName);
@@ -42,7 +46,8 @@ public class TodoFunctionalityTest {
      */
     @Test
     public void testCheckUncheckTodo() {
-        HomePage homePage = new HomePage(webDriver);
+//        HomePage homePage = new HomePage(webDriver);
+        HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
         String todoName = "AAA";
 
         homePage.addTodo(todoName);
