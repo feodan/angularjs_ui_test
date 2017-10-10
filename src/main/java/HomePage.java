@@ -11,7 +11,9 @@ public class HomePage {
     private WebDriver driver;
 
     private String todoCheckboxLocator = "//*[text()=''{0}'']/../input";
-//    @FindBy(css = todoCheckboxLocator)
+//    WebElement todoCheckbox = $("//*[text()=''{0}'']/../input");
+
+    //    @FindBy(css = todoCheckboxLocator)
 //    private WebElement todoCheckbox;
 
     private String todoLabelText = "//div[@app-run=\"todo.html\"]//*[text()=''{0}'']";
